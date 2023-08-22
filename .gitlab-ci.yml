@@ -1,0 +1,23 @@
+image: openjdk:11
+
+stages:
+  - setup
+  - test
+
+before_script:
+  - chmod +x ./gradlew
+
+setup:
+  stage: setup
+  script:
+    - echo "Setting up environment"
+
+test:
+  stage: test
+  script:
+    - echo "Running tests"
+    - ./gradlew test
+
+schedule:
+  - cron: "0 0 * * MON"
+    description: "Run tests every Monday"
