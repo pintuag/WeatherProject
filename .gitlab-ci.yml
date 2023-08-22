@@ -17,7 +17,3 @@ test:
   script:
     - echo "Running tests"
     - ./gradlew test
-
-schedule:
-  - cron: "0 0 * * MON"
-    description: "Run tests every Monday"
